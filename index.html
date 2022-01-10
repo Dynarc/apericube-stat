@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <title>STAT APÉRICUBE</title>
+</head>
+
+<body>
+    <div class="d-flex">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sticky-top" style="width: 280px; height: 100vh;">
+            <p href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4">Stats Apéricube S1</span>
+            </p>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <p class="nav-link text-white" aria-current="page">
+                        Utilisateur
+                    </p>
+                </li>
+                <form class="d-flex align-items-center">
+                    <input type="search" class="form-control form-control-dark input1" placeholder="Search..." aria-label="Search">
+                    <div aria-label="Search" class="search-user">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" style="cursor: pointer;"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+                    </div>
+                </form>
+
+                <li class="nav-item mt-5">
+                    <p class="nav-link text-white" aria-current="page">
+                        Global
+                    </p>
+                </li>
+                <form>
+                    <select id="stat-type" class="my-2" style="width: 90%;">
+                        <option value="">--Choisissez le type de stat--</option>
+                        <option value="minecraft:used">Items utilisés</option>
+                        <option value="minecraft:broken">Items cassés</option>
+                        <option value="minecraft:crafted">Items craftés</option>
+                        <option value="minecraft:dropped">Items jetés</option>
+                        <option value="minecraft:picked_up">Items ramassés</option>
+                        <option value="minecraft:mined">Blocs cassés</option>
+                        <option value="minecraft:killed">Ennemis tués</option>
+                        <option value="minecraft:killed_by">Tué par</option>
+                        <option value="minecraft:custom">Autre</option>
+                    </select>
+                    
+                    <input list="stat-list" id="stat-name" name="stat-name" style="width: 90%;"/>
+                    <datalist id="stat-list">
+                        
+                    </datalist>
+                </form>
+            </ul>
+        </div>
+        <div class="my-5 mx-3 content w-100" style="width: auto">
+            
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</body>
+
+</html>
