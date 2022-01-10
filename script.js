@@ -58,21 +58,12 @@ const allFiles = [
     "fdd877f0-7396-4b4b-8dba-3e91fd21d1b3.json",
 ];
 
-const sampleFiles = [
-    "2aa434f8-43c1-4f68-9e6f-f33fa1c3f5ab.json",
-    "2da6e0c4-e346-4f86-84ba-a9af35832e92.json",
-    "03b49dde-0e42-41b0-b6b0-b31b79c21845.json",
-    "3e042019-6bfe-4b4e-9bd1-2454e6e0ce1c.json",
-    "3f09598b-6a48-4ba4-9e86-29ac6ef71b04.json",
-    "5a7705f6-466a-46b9-9aa7-ab8befa76b41.json",
-    "5b2253bf-43e4-4060-9aee-f81ab31846c6.json",
-    "6c76e146-4a06-4a97-9490-d6b33554f2c6.json",
-    "7f80738e-63a6-4e8b-a82d-7d9c13a690f8.json",
-];
-
 let allData = [];
+let allUser = [];
+let fetchProgress = allFiles.length - 1;
 
-const search = document.querySelector(".search-user");
+const search = document.querySelector("#search");
+const searchList = document.querySelector('#search-list')
 const form = document.querySelector("form");
 const statType = document.querySelector('#stat-type');
 const statName = document.querySelector('#stat-name');
@@ -92,22 +83,30 @@ function getData(data) {
                 });
 
             userData.name = userName;
+            allUser.push(userName.toLowerCase());
 
             allData.push(userData);
+            
+            if (fetchProgress === 0) {
+                allUser.sort();
+                getUser();
+            } else {
+                fetchProgress --;
+            }
         })
 
         .catch((err) => {
             console.error(err);
-        });
+        });    
+        
 }
 
 function searchUser() {
-    const searchBar = document.querySelector(".input1");
     const contentZone = document.querySelector(".content");
 
     for (let player in allData) {
         let content;
-        if (searchBar.value.toLowerCase() == allData[player].name.toLowerCase()) {
+        if (search.value.toLowerCase() == allData[player].name.toLowerCase()) {
             content = `<h1>Les stats de ${allData[player].name}</h1>`;
             content += `<table class="table table-striped table-sm">
             <thead>
@@ -250,7 +249,12 @@ function updateStatList() {
     statName.value = '';
 }
 
-
+function getUser() {
+    allUser.forEach(user => {
+        searchList.innerHTML += `<option value="${user}">`;
+    });
+    
+}
 
 
 function noSubmit(event) {
@@ -259,13 +263,14 @@ function noSubmit(event) {
 
 allFiles.forEach((file) => {
     getData(file);
-});
+})
 
-search.addEventListener("click", searchUser);
+search.addEventListener("change", searchUser);
+search.addEventListener("change", () => { search.placeholder = search.value; search.value = '' })
 
 statType.addEventListener("change", updateStatList);
 statName.addEventListener("change", displayGraph);
-statName.addEventListener("dblclick", () => { statName.value = '' })
+statName.addEventListener("change", () => { statName.placeholder = statName.value; statName.value = '' })
 
 form.addEventListener("submit", noSubmit);
 statName.parentElement.addEventListener("submit", noSubmit);
