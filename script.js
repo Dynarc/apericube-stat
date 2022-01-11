@@ -253,10 +253,11 @@ function updateStatList() {
 }
 
 function getUser() {
+    let allPlayers = '';
     allUser.forEach(user => {
-        searchList.innerHTML += `<option value="${user}">`;
+        allPlayers += `<option value="${user}">`;
     });
-    
+    searchList.innerHTML = allPlayers;
 }
 
 
