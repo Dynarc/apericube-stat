@@ -241,10 +241,13 @@ function updateStatList() {
     const stats = document.querySelector('#stat-list');
 
     stats.innerHTML = '';
+    let allStats = '';
 
     statList.forEach(stat => {
-        stats.innerHTML += `<option value="${stat.replace('minecraft:', '')}">`;
+        allStats += `<option value="${stat.replace('minecraft:', '')}">`;
     });
+    
+    stats.innerHTML = allStats;
 
     statName.value = '';
 }
