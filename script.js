@@ -67,6 +67,7 @@ const searchList = document.querySelector('#search-list')
 const form = document.querySelector("form");
 const statType = document.querySelector('#stat-type');
 const statName = document.querySelector('#stat-name');
+const totalField = document.querySelector('.total');
 
 function getData(data) {
     fetch('data/' + data)
@@ -103,6 +104,7 @@ function getData(data) {
 
 function searchUser() {
     const contentZone = document.querySelector(".content");
+    totalField.style.display = "none";
 
     for (let player in allData) {
         let content;
@@ -146,9 +148,12 @@ function displayGraph() {
     const ctx = document.querySelector('#myChart');
     const dataValue = [];
     const dataLabel = [];
+    let total = 0;
 
     allData.forEach(playerData => {
         if (playerData.stats[statType.value] && playerData.stats[statType.value]['minecraft:' + statName.value]) {
+
+            total += playerData.stats[statType.value]['minecraft:' + statName.value];
 
             dataValue.push({ name: playerData.name, value: playerData.stats[statType.value]['minecraft:' + statName.value] });
             dataValue.sort(function (a, b) {
@@ -157,6 +162,9 @@ function displayGraph() {
 
         }
     });
+
+    totalField.innerHTML = `Total : ${new Intl.NumberFormat('de-DE').format(total)}`;
+    totalField.style.display = "inline-block";
 
     const data = {
         datasets: [{
