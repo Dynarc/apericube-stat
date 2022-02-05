@@ -60,7 +60,9 @@ const allFiles = [
 
 let allData = [];
 let allUser = [];
-let fetchProgress = allFiles.length - 1;
+let getStatProgress = allFiles.length - 1;
+let getAdvancementProgress = allFiles.length - 1;
+let advancementFull = getAdvancementFull();
 
 const search = document.querySelector("#search");
 const searchList = document.querySelector('#search-list')
@@ -69,8 +71,8 @@ const statType = document.querySelector('#stat-type');
 const statName = document.querySelector('#stat-name');
 const totalField = document.querySelector('.total');
 
-function getData(data) {
-    fetch('data/stats' + data)
+function getStat(data) {
+    fetch('data/stats/' + data)
         .then((response) => response.json())
 
         .then(async (response) => {
@@ -84,22 +86,51 @@ function getData(data) {
                 });
 
             userData.name = userName;
+            userData.UUID = data.replace(/(.json)/g, "");
             allUser.push(userName.toLowerCase());
 
             allData.push(userData);
-            
-            if (fetchProgress === 0) {
-                allUser.sort();
-                getUser();
+
+            if (getStatProgress === 0) {
+                getAdvancement();
             } else {
-                fetchProgress --;
+                getStatProgress --;
             }
         })
 
         .catch((err) => {
             console.error(err);
-        });    
-        
+        });
+
+}
+
+function getAdvancement () {
+    allFiles.forEach(file => {
+        fetch('data/advancement/' + file)
+        .then((response) => response.json())
+        .then((response) => {
+            const userAdvancement = response;
+            allData.forEach(data => {
+                if(data.UUID == file.replace(/(.json)/g, "")) data.advancement = userAdvancement;
+            });
+            if (getAdvancementProgress === 0) {
+                allUser.sort();
+                getUser();
+            } else {
+                getAdvancementProgress --;
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+
+    });
+}
+
+function getAdvancementFull() {
+    fetch("data/full-advancement.json")
+    .then((response) => response.json())
+    .then((response) => advancementFull = response)
 }
 
 function searchUser() {
@@ -142,7 +173,6 @@ function searchUser() {
 }
 
 function displayGraph() {
-    // only for stone break for exemple
     const content = document.querySelector(".content");
     content.innerHTML = `<canvas id="myChart" width="400" height="400" style="max-height: 90vh"></canvas>`;
     const ctx = document.querySelector('#myChart');
@@ -254,7 +284,7 @@ function updateStatList() {
     statList.forEach(stat => {
         allStats += `<option value="${stat.replace('minecraft:', '')}">`;
     });
-    
+
     stats.innerHTML = allStats;
 
     statName.value = '';
@@ -274,7 +304,7 @@ function noSubmit(event) {
 }
 
 allFiles.forEach((file) => {
-    getData(file);
+    getStat(file);
 })
 
 search.addEventListener("change", searchUser);
