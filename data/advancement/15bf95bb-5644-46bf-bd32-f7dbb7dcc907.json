@@ -1,0 +1,52 @@
+{
+  "minecraft:adventure/sleep_in_bed": {
+    "criteria": {
+      "slept_in_bed": "2020-07-16 18:05:51 +0200"
+    },
+    "done": true
+  },
+  "main:main/custom_nether_portals": {
+    "criteria": {
+      "tick": "2020-07-16 18:05:01 +0200"
+    },
+    "done": true
+  },
+  "main:main/dragon_drops_elytra": {
+    "criteria": {
+      "tick": "2020-07-16 18:05:01 +0200"
+    },
+    "done": true
+  },
+  "main:main/multiplayer_sleep": {
+    "criteria": {
+      "tick": "2020-07-16 18:05:01 +0200"
+    },
+    "done": true
+  },
+  "main:main/root": {
+    "criteria": {
+      "tick": "2020-07-16 18:05:01 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:mountains": "2020-07-16 18:05:08 +0200",
+      "minecraft:plains": "2020-07-16 18:05:01 +0200"
+    },
+    "done": false
+  },
+  "multiplayer_sleep:sleep": {
+    "criteria": {
+      "tick": "2020-07-16 18:32:59 +0200"
+    },
+    "done": false
+  },
+  "multiplayer_sleep:toast": {
+    "criteria": {
+      "impossible": "2020-07-16 18:32:52 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 2567
+}

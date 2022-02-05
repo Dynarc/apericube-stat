@@ -1,0 +1,144 @@
+{
+  "minecraft:adventure/sleep_in_bed": {
+    "criteria": {
+      "slept_in_bed": "2020-08-21 18:10:42 +0200"
+    },
+    "done": true
+  },
+  "main:main/custom_nether_portals": {
+    "criteria": {
+      "tick": "2020-08-21 16:35:38 +0200"
+    },
+    "done": true
+  },
+  "minecraft:nether/find_fortress": {
+    "criteria": {
+      "fortress": "2020-08-21 17:09:54 +0200"
+    },
+    "done": true
+  },
+  "main:main/dragon_drops_elytra": {
+    "criteria": {
+      "tick": "2020-08-21 16:35:38 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "minecraft:end/root": {
+    "criteria": {
+      "entered_end": "2020-08-21 17:17:34 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/enter_the_nether": {
+    "criteria": {
+      "entered_nether": "2020-08-21 17:09:35 +0200"
+    },
+    "done": true
+  },
+  "main:main/root": {
+    "criteria": {
+      "tick": "2020-08-21 16:35:38 +0200"
+    },
+    "done": true
+  },
+  "multiplayer_sleep:sleep": {
+    "criteria": {
+      "tick": "2020-08-21 18:58:28 +0200"
+    },
+    "done": false
+  },
+  "multiplayer_sleep:toast": {
+    "criteria": {
+      "impossible": "2020-08-21 18:57:12 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/enter_the_end": {
+    "criteria": {
+      "entered_end": "2020-08-21 17:17:34 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "minecraft:nether/root": {
+    "criteria": {
+      "entered_nether": "2020-08-21 17:09:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "main:main/multiplayer_sleep": {
+    "criteria": {
+      "tick": "2020-08-21 16:35:38 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2020-08-21 16:51:00 +0200"
+    },
+    "done": true
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:nether_wastes": "2020-08-21 17:12:39 +0200",
+      "minecraft:soul_sand_valley": "2020-08-21 17:09:37 +0200"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2020-08-21 16:57:17 +0200",
+      "minecraft:mountains": "2020-08-21 16:39:40 +0200",
+      "minecraft:mushroom_fields": "2020-08-21 18:20:10 +0200",
+      "minecraft:taiga": "2020-08-21 18:07:36 +0200",
+      "minecraft:desert_hills": "2020-08-21 17:48:18 +0200",
+      "minecraft:giant_tree_taiga": "2020-08-21 18:05:55 +0200",
+      "minecraft:snowy_tundra": "2020-08-21 18:08:01 +0200",
+      "minecraft:taiga_hills": "2020-08-21 18:07:14 +0200",
+      "minecraft:desert": "2020-08-21 17:38:13 +0200",
+      "minecraft:birch_forest": "2020-08-21 17:29:12 +0200",
+      "minecraft:deep_lukewarm_ocean": "2020-08-21 18:52:33 +0200",
+      "minecraft:beach": "2020-08-21 18:36:39 +0200",
+      "minecraft:river": "2020-08-21 16:39:34 +0200",
+      "minecraft:lukewarm_ocean": "2020-08-21 18:28:46 +0200",
+      "minecraft:birch_forest_hills": "2020-08-21 17:34:57 +0200",
+      "minecraft:wooded_mountains": "2020-08-21 17:01:27 +0200",
+      "minecraft:wooded_badlands_plateau": "2020-08-21 19:00:18 +0200",
+      "minecraft:mushroom_field_shore": "2020-08-21 18:21:04 +0200",
+      "minecraft:swamp": "2020-08-21 17:49:35 +0200",
+      "minecraft:savanna": "2020-08-21 17:39:16 +0200",
+      "minecraft:plains": "2020-08-21 16:35:37 +0200"
+    },
+    "done": false
+  },
+  "DataVersion": 2567
+}
