@@ -70,7 +70,7 @@ const statName = document.querySelector('#stat-name');
 const totalField = document.querySelector('.total');
 
 function getData(data) {
-    fetch('data/' + data)
+    fetch('data/stats' + data)
         .then((response) => response.json())
 
         .then(async (response) => {
