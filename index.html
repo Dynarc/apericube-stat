@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="./public/bootstrap.min.css">
     <title>STAT APÉRICUBE</title>
 </head>
 
@@ -26,7 +27,7 @@
                 <form class="d-flex align-items-center">
                     <input list="search-list" id="search" name="search" style="width: 90%;"/>
                     <datalist id="search-list">
-                        
+
                     </datalist>
                 </form>
 
@@ -36,6 +37,11 @@
                     </p>
                 </li>
                 <form>
+                    <select id="info-type" class="my-2 mb-0" style="width: 90%;">
+                        <option value="statistics">Statistiques</option>
+                        <option value="recipes">Recettes</option>
+                        <option value="advancements">Advancements</option>
+                    </select>
                     <select id="stat-type" class="my-2" style="width: 90%;">
                         <option value="">--Choisissez le type de stat--</option>
                         <option value="minecraft:used">Items utilisés</option>
@@ -48,10 +54,10 @@
                         <option value="minecraft:killed_by">Tué par</option>
                         <option value="minecraft:custom">Autre</option>
                     </select>
-                    
+
                     <input list="stat-list" id="stat-name" name="stat-name" style="width: 90%;"/>
                     <datalist id="stat-list">
-                        
+
                     </datalist>
                 </form>
 
@@ -59,16 +65,24 @@
             </ul>
         </div>
         <div class="my-5 mx-3 content w-100" style="width: auto">
-            
+
         </div>
     </div>
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script src="./object.js"></script> -->
     <script src="./script.js"></script>
-    <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script> -->
+    <script src="./public/bootstrap.bundle.min.js"></script>
+    <script src="./public/chart.min.js"></script>
+    <script src="./public/chart-plugin-datalabels.min.js"></script>
 </body>
 
 </html>
+
+<!-- ! next update is to comment everything and finish global stats -->
+<!-- TODO: update advancement to keep only the player's criteria when it's done to prevent multiple way advancement to display all possiblities (and only show which one he succed) -->
