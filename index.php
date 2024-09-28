@@ -70,6 +70,19 @@
     </div>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <?php
+    $array_files = scandir('./data/advancement');
+    array_splice($array_files, 0, 2);
+    $js_array = '[';
+    foreach ($array_files as $files) {
+        $js_array .= "'".$files."',";
+    }
+    $js_array = substr($js_array, 0, -1);
+    $js_array .= "]";
+    echo '<script>const allFiles = '.$js_array.';</script>';
+    ?>
+
     <!-- <script src="./object.js"></script> -->
     <script src="./script.js"></script>
     <!-- <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"
