@@ -88,7 +88,7 @@
     }
     $js_array = substr($js_array, 0, -1);
     $js_array .= "]";
-    echo '<script>const allFiles = '.$js_array.';</script>';
+    echo '<script>const allFiles = '.$js_array.', version = "V'.$_SESSION["version"].'";</script>';
     ?>
 
     <!-- <script src="./object.js"></script> -->
