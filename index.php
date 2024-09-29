@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+session_start();
+
+if(isset($_GET["version"]) && in_array($_GET["version"], ["1","2"])) { // verify if v1 or v2 is selected
+    $_SESSION["version"] = $_GET["version"];
+} else {
+    $_SESSION["version"] = isset($_SESSION["version"]) ? $_SESSION["version"] : "1";
+}
+
+$v = $_SESSION["version"];
+$nv = ($v == '1' ? '2' : '1');
+?>
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +28,8 @@
     <div class="d-flex">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sticky-top" style="width: 280px; height: 100vh;">
             <p href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span class="fs-4">Stats Apéricube S1</span>
+                <span class="fs-4">Stats Apéricube S<?=$v?></span>
+                <button type="button" class="btn btn-secondary btn-sm ms-3" onclick="fetch('./?version=<?=$nv?>').then((r)=>r.text()).then((r)=>location.reload());">S<?=$nv?></button>
             </p>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
@@ -72,7 +86,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <?php
-    $array_files = scandir('./data/advancement');
+    $array_files = scandir('./data/V'.$v.'/advancement');
     array_splice($array_files, 0, 2);
     $js_array = '[';
     foreach ($array_files as $files) {
@@ -80,7 +94,7 @@
     }
     $js_array = substr($js_array, 0, -1);
     $js_array .= "]";
-    echo '<script>const allFiles = '.$js_array.';</script>';
+    echo '<script>const allFiles = '.$js_array.', version = "V'.$v.'";</script>';
     ?>
 
     <!-- <script src="./object.js"></script> -->
