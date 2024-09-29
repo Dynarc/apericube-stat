@@ -80,7 +80,9 @@ function searchUser() {
     for (let player in allData) {
         let content;
         if (search.value.toLowerCase() == allData[player].name.toLowerCase()) {
-            content = `<h1>Les stats de ${allData[player].name}</h1>`;
+            content = `<h1>Les stats de ${allData[player].name}`;
+            content += `<img class="mx-4" src="https://mc-heads.net/avatar/${allData[player].UUID}/50" alt="Tête du joueur ${allData[player].name}" title="Tête du joueur ${allData[player].name}">`
+            content += '</h1>';
             content += '<button class="btn btn-secondary m-2">Statistiques</button><button class="btn btn-secondary m-2">Recettes débloquées</button><button class="btn btn-secondary m-2">Advancement</button>'
             content += `<table class="table table-striped table-sm">
             <thead>
