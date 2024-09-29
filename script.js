@@ -12,7 +12,7 @@ const statName = document.querySelector('#stat-name');
 const totalField = document.querySelector('.total');
 
 function getStat(data) {
-    fetch('data/stats/' + data)
+    fetch('data/' + version + '/stats/' + data)
         .then((response) => response.json())
 
         .then(async (response) => {
@@ -46,7 +46,7 @@ function getStat(data) {
 
 function getAdvancement () {
     allFiles.forEach(file => {
-        fetch('data/advancement/' + file)
+        fetch('data/' + version + '/advancement/' + file)
         .then((response) => response.json())
         .then((response) => {
             const userAdvancement = response;
@@ -68,7 +68,7 @@ function getAdvancement () {
 }
 
 function getAdvancementFull() {
-    fetch("data/full-advancement.json")
+    fetch("data/" + version + "/full-advancement.json")
     .then((response) => response.json())
     .then((response) => {advancementFull = response});
 }
